@@ -1,8 +1,10 @@
-<mat-toolbar color="primary">
-  <mat-toolbar-row>
-    <span>My App</span>
-    <span style="flex: 1 1 auto ;"></span>
-    <mat-slide-toggle (click)="toggleDarkMode()" [(ngModel)]="isDarkMode">Dark Mode</mat-slide-toggle>
-  </mat-toolbar-row>
-</mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav role="navigation">
+    <app-sidenav (sidenavClose)="sidenav.close()"></app-sidenav>
+  </mat-sidenav>
 
+  <mat-sidenav-content>
+   <app-header (sidenavToggle)="sidenav.toggle()"></app-header>
+    <main>Hea i'm the main content of the page!</main>
+  </mat-sidenav-content>
+</mat-sidenav-container>
