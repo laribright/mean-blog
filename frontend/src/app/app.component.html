@@ -1,0 +1,17 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav role="navigation">
+    <app-sidenav (sidenavClose)="sidenav.close()"></app-sidenav>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <app-header (sidenavToggle)="sidenav.toggle()"></app-header>
+    <main>
+      <div class="col-xs-12 mx-auto col-md-6 mt-3 text-center p-1">
+        <app-post-create (newPost)="onPostAdded($event)"></app-post-create>
+      </div>
+      <div class="col-xs-12 col-md-6 text-center p-1 mx-auto">
+        <app-post-list [posts]="posts"></app-post-list>
+      </div>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,22 @@
+<mat-toolbar color="primary" class="d-flex justify-content-between">
+  <div class="d-md-none">
+    <button mat-icon-button (click)="onToggleSidenav()">
+      <mat-icon> menu </mat-icon>
+    </button>
+  </div>
+
+  <div>logo</div>
+
+  <mat-slide-toggle
+    (click)="toggleDarkMode()"
+    [(ngModel)]="isDarkMode"
+  ></mat-slide-toggle>
+  <!-- <mat-icon>brightness_6</mat-icon> -->
+
+  <div class="d-none d-md-block">
+    <a href="#">Link 1</a>
+    <a class="ms-5" href="#">Link 2</a>
+    <a class="ms-5" href="#">Link 3</a>
+    <button mat-icon-button class="ms-5" href="#">Logout</button>
+  </div>
+</mat-toolbar>
