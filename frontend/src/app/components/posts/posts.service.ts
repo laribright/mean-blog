@@ -27,8 +27,16 @@ export class PostsService {
     return this.updatedPosts.asObservable();
   }
 
+  // Adding posts to the database
   addPost(post: Post) {
-    this.posts.push(post);
-    this.updatedPosts.next(this.posts.slice());
+    this.http
+      .post<{
+        success: boolean;
+        message: string;
+      }>('http://localhost:8000/api/v1/posts', post)
+      .subscribe((responseData) => {
+        this.posts.push(post);
+        this.updatedPosts.next(this.posts.slice());
+      });
   }
 }
