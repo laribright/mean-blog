@@ -23,3 +23,13 @@ export const getPosts = (req, res) => {
     posts,
   });
 };
+
+export const postPosts = (req, res) => {
+  const { title, content } = req.body;
+  const post = { title, content };
+
+  res.status(201).json({
+    success: true,
+    message: "post creation successful"
+  })
+};
