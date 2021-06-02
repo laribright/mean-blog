@@ -19,7 +19,7 @@ export class PostsService {
       )
       .subscribe((post) => {
         this.posts = post.posts;
-        this.updatedPosts.next({ ...this.posts });
+        this.updatedPosts.next([...this.posts]);
       });
   }
 
@@ -33,10 +33,22 @@ export class PostsService {
       .post<{
         success: boolean;
         message: string;
+        post: Post;
       }>('http://localhost:8000/api/v1/posts', post)
       .subscribe((responseData) => {
-        this.posts.push(post);
+        const newPost = responseData.post;
+        this.posts.push(newPost);
         this.updatedPosts.next(this.posts.slice());
+      });
+  }
+
+  deletePost(id: string) {
+    this.http
+      .delete(`http://localhost:8000/api/v1/posts/${id}`)
+      .subscribe((response) => {
+        const newUpdatedPosts = this.posts.filter((post) => post._id !== id);
+        this.posts = newUpdatedPosts;
+        this.updatedPosts.next([...this.posts]);
       });
   }
 }

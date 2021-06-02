@@ -15,7 +15,7 @@ export class PostCreateComponent {
     if (form.invalid) return;
 
     const post: Post = {
-      _id: Math.random(),
+      _id: '',
       title: form.value.title,
       content: form.value.content,
     };
