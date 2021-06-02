@@ -10,6 +10,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   imports: [
@@ -22,7 +23,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatListModule,
     MatCardModule,
     MatFormFieldModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatInputModule
   ],
   exports: [
     MatSlideToggleModule,
@@ -34,7 +36,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatListModule,
     MatCardModule,
     MatFormFieldModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatInputModule
   ],
 })
 export class MaterialModule {}
