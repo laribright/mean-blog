@@ -6,12 +6,7 @@
   <mat-sidenav-content>
     <app-header (sidenavToggle)="sidenav.toggle()"></app-header>
     <main>
-      <div class="col-xs-12 mx-auto col-md-6 mt-3 text-center p-1">
-        <app-post-create></app-post-create>
-      </div>
-      <div class="col-xs-12 col-md-6 text-center p-1 mx-auto">
-        <app-post-list></app-post-list>
-      </div>
+        <router-outlet></router-outlet>
     </main>
   </mat-sidenav-content>
 </mat-sidenav-container>

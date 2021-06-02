@@ -1,14 +1,22 @@
-<div class="mb-4" *ngIf="posts.length > 0">
-  <mat-accordion multi="true" *ngFor="let post of posts">
-    <mat-expansion-panel>
-  <mat-expansion-panel-header> {{post.title}} </mat-expansion-panel-header>
-      <p>{{ post.content }}</p>
-      <mat-action-row>
-        <button mat-button color="accent">EDIT</button>
-        <button mat-button color="warn" (click)="onDeletePost(post._id)">DELETE</button>
-      </mat-action-row>
-    </mat-expansion-panel>
-  </mat-accordion>
-</div>
+<div class="col-xs-12 mx-auto col-md-6 mt-3 text-center p-1">
+  <div class="mb-4" *ngIf="posts.length > 0">
+    <mat-accordion multi="true" *ngFor="let post of posts">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          {{ post.title }}
+        </mat-expansion-panel-header>
+        <p>{{ post.content }}</p>
+        <mat-action-row>
+          <button mat-button color="accent">EDIT</button>
+          <button mat-button color="warn" (click)="onDeletePost(post._id)">
+            DELETE
+          </button>
+        </mat-action-row>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
 
-<h2 *ngIf="posts.length <= 0" class="text-center fw-bold mt-3">No Posts yet</h2>
+  <h2 *ngIf="posts.length <= 0" class="text-center fw-bold mt-3">
+    No Posts yet
+  </h2>
+</div>

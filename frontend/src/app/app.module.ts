@@ -4,11 +4,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from './material.module';
 import { AppComponent } from './app.component';
 import { PostCreateComponent } from './components/posts/post-create/post-create.component';
 import { HeaderComponent } from './components/navigation/header/header.component';
-import { PostList } from './components/posts/post-list/post-list.component';
+import { PostListComponent } from './components/posts/post-list/post-list.component';
 import { SidenavComponent } from './components/navigation/sidenav/sidenav.component';
 
 @NgModule({
@@ -17,7 +18,7 @@ import { SidenavComponent } from './components/navigation/sidenav/sidenav.compon
     PostCreateComponent,
     HeaderComponent,
     SidenavComponent,
-    PostList,
+    PostListComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,6 +26,7 @@ import { SidenavComponent } from './components/navigation/sidenav/sidenav.compon
     FormsModule,
     MaterialModule,
     HttpClientModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
